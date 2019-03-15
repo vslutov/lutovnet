@@ -1,0 +1,34 @@
+{
+  "name": "lutov-net",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "ramda": "^0.26.1",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-scripts": "2.1.8"
+  },
+  "scripts": {
+    "start": "gulp start",
+    "build": "gulp build",
+    "test": "gulp test",
+    "clean": "rimraf build src"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@craco/craco": "^3.6.0",
+    "coffeescript": "^2.3.2",
+    "gulp": "^4.0.0",
+    "gulp-coffee": "^3.0.3",
+    "gulp-plumber": "^1.2.1",
+    "rimraf": "^2.6.3"
+  }
+}
