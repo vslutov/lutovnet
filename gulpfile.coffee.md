@@ -22,14 +22,19 @@ Set paths to code
 Compile coffee files
 
     gulp.task 'coffee', =>
-      gulp.src paths.js.csGlob, sourcemaps: true
+      gulp.src paths.js.csGlob
         .pipe newer
           dest: paths.js.src
           map: (fname) => fname.split('.')[..-3].join('.') + '.js'
         .pipe plumber()
         .pipe coffee
-          bare: true
           coffee: coffeescript
+          bare: true
+          inlineMap: true
+          transpile:
+            plugins: [
+              'transform-react-pug'
+            ]
         .pipe gulp.dest paths.js.src
 
 `build:incremental` is a task to update all files needed by webpack.

@@ -1,5 +1,7 @@
 # lutov-net
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 Source files for site [lutov.net](https://lutov.net).
 
 ## Available Scripts

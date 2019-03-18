@@ -12,7 +12,8 @@
     "start": "gulp start",
     "build": "gulp",
     "test": "gulp test",
-    "clean": "rimraf build src"
+    "clean": "rimraf build src",
+    "cz": "git-cz"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -25,15 +26,20 @@
   ],
   "devDependencies": {
     "@craco/craco": "^3.6.0",
-    "babel-plugin-transform-jsx-classname-components": "0.0.3",
     "babel-plugin-transform-react-pug": "^7.0.0",
     "coffeescript": "^2.3.2",
-    "eslint-plugin-react-pug": "^0.5.7",
+    "commitizen": "^3.0.7",
+    "cz-conventional-changelog": "^2.1.0",
     "gulp": "^4.0.0",
     "gulp-coffee": "^3.0.3",
     "gulp-newer": "^1.4.0",
     "gulp-plumber": "^1.2.1",
     "pug-as-jsx-loader": "^1.0.66",
     "rimraf": "^2.6.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
