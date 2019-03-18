@@ -9,9 +9,9 @@
     "react-scripts": "2.1.8"
   },
   "scripts": {
-    "start": "gulp start",
-    "build": "gulp",
-    "test": "gulp test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "clean": "rimraf build src",
     "cz": "git-cz"
   },
@@ -27,13 +27,10 @@
   "devDependencies": {
     "@craco/craco": "^3.6.0",
     "babel-plugin-transform-react-pug": "^7.0.0",
+    "coffee-loader": "^0.9.0",
     "coffeescript": "^2.3.2",
     "commitizen": "^3.0.7",
     "cz-conventional-changelog": "^2.1.0",
-    "gulp": "^4.0.0",
-    "gulp-coffee": "^3.0.3",
-    "gulp-newer": "^1.4.0",
-    "gulp-plumber": "^1.2.1",
     "pug-as-jsx-loader": "^1.0.66",
     "rimraf": "^2.6.3"
   },
