@@ -1,0 +1,6 @@
+- title: Введение
+  name: index
+  path: index.md
+- title: Настройка сборки
+  name: building
+  path: building.md
