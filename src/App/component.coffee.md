@@ -1,7 +1,13 @@
     import React, { Fragment } from 'react'
 
+    import { Container, Row, Col } from 'reactstrap'
+    import { Navbar } from '../Navbar'
+
     export default AppComponent = => `pug\`
       Fragment
-        p.lead Hello, Pug!
-        a Homepage
+        Navbar
+        Container
+          Row
+            Col
+              p.lead Hello, Pug!
     \``
