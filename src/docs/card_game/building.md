@@ -90,6 +90,47 @@ node.js, не требует дополнительной установки.
 некоторых полей и создаст первую версию package.json. В этом файле хранится основная информация
 о проекте, зависимостях, настройки для некоторых инструментов и т.п.
 
+Содержимое минимального файла package.json:
+
+```json
+{
+  "name": "lutov-net",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vslutov/lutov-net.git"
+  },
+  "author": "Vladimir Lutov <vs@lutov.net> (https://lutov.net)",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/vslutov/lutov-net/issues"
+  },
+  "homepage": "https://github.com/vslutov/lutov-net#readme"
+}
+```
+
+В нем указывается:
+- название пакета `name`;
+- версия пакета `version`;
+- описание пакета `descriptiom`;
+- путь до главного файла `main`, имеет смысл если пакет - это библиотека, этот файл
+  подключает nodejs при вызове `require(libname)`;
+- путь до репозитория и его тип `repository`;
+- контакты автора `author`;
+- лицензия `license`, все валидные варианты лицензии можно посмотреть [тут][spdx];
+- куда посылать баги `bugs` и домашняя страница проекта `homepage`, npm заполнит эти
+  поля автоматически, если указать репозиторий на github.
+
+Кстати, если вы пишите библиотеку, стоит указать переменную `module` в путь до файла,
+который можно импортировать в стиле ES6 и переменную `sideEffects` в `false`, сборку
+обычного `main` файла можно настроить с помощью [rollup][rollup]. Это позволит
+пользователям вашей библиотеки включать в свой bundle только нужные участки кода.
+
 Если вы будете использовать Create React App, то эта команда вам не понадобится, но полезно
 посмотреть из чего состоит минимальный проект на javascript.
 
@@ -97,13 +138,78 @@ node.js, не требует дополнительной установки.
 
 Полезные команды, о которых стоит знать каждому разработчику:
 
-- `npm test` - запуск скрипта, который прописан в файле package.json в переменной `scripts.test`
+- `npm test` - запуск скрипта, который прописан в файле package.json в переменной `scripts.test`;
 - `npm version (patch|minor|major)` - обновить версию пакета в файле package.json,
-  создать коммит с этим изменением и пометить его тегом `vX.Y.Z`.
+  создать коммит с этим изменением и пометить его тегом `vX.Y.Z`;
+- `npm run <scriptname>` - запустить один из скриптов, перечисленных в `scripts` в package.json,
+  все локально установленные библиотеки и исполняемые файлы будут доступны;
+- `npm start` - запустить `scripts.start`;
+- `npx` - запустить какой-то пакет из npm, если он стоит локально, именно эта версия будет запущена,
+  иначе будет скачана последняя версия.
 
 ## Сборка и разработка
 
 [Create React App] и [Craco]
+
+## Usefull packages
+
+После первоначальной инициализации пакета, стоит подключить некоторые полезные пакеты:
+
+### Rimraf
+
+Кросплатформенное удаление файлов и папок.
+В `scripts.clean` в package.json рекомендую прописать `rimraf build`, тогда `npm run clean`
+станет командой удаления артефактов сборки.
+
+### Commitizen
+
+`commitizen` и `cz-conventional-changelog` - простое оформление качественных коммитов.
+Нужно прописать в package.json:
+
+```json
+    {
+      "scripts": {
+        "cz": "git-cz"
+      },
+      "config": {
+        "commitizen": {
+          "path": "./node_modules/cz-conventional-changelog"
+        }
+      }
+    }
+```
+
+Теперь после `git add` можно выполнить `npm run cz`, ответить на несколько вопросов и
+получить коммит с информативным сообщением.
+
+### Husky
+
+Этот пакет позволяет запускать команды при каждом коммите. В package.json прописываем:
+
+```json
+    {
+      "husky": {
+        "hooks": {
+          "pre-commit": "npm test",
+          "pre-push": "npm test"
+        }
+      }
+    }
+```
+
+### Настройте prepublishOnly
+
+Можно прописать в package.json:
+
+```json
+    {
+      "scripts": {
+        "prepublishOnly": "npm install && npm run clean && npm test && npm run build && npm prune --production && npm dedupe && npm shrinkwrap"
+      }
+    }
+```
+
+Теперь после запуска `npm verions (patch|minor|major)` проводится обновление `shrinkwrap.json`.
 
 ## Пишем литературный код в 21 веке
 
@@ -134,3 +240,5 @@ node.js, не требует дополнительной установки.
 [git-lfs]: https://git-lfs.github.com/
 [fedora]: https://getfedora.org/
 [firefox]: https://www.mozilla.org/en-US/firefox/
+[rollup]: https://rollupjs.org/guide/en
+[spdx]: https://spdx.org/licenses/

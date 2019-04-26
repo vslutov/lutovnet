@@ -12,8 +12,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "clean": "rimraf build src",
-    "cz": "git-cz"
+    "clean": "rimraf build",
+    "cz": "git-cz",
+    "prepublishOnly": "npm install && npm run clean && npm test && npm run build && npm prune --production && npm dedupe && npm shrinkwrap"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,12 +32,20 @@
     "coffeescript": "^2.3.2",
     "commitizen": "^3.0.7",
     "cz-conventional-changelog": "^2.1.0",
+    "husky": "^2.1.0",
+    "jest-preset-coffeescript": "^1.0.1",
     "pug-as-jsx-loader": "^1.0.66",
     "rimraf": "^2.6.3"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test -- --watchAll=false",
+      "pre-push": "npm test -- --watchAll=false"
     }
   }
 }
