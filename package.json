@@ -14,7 +14,8 @@
     "test": "craco test",
     "clean": "rimraf build",
     "cz": "git-cz",
-    "version": "npm install && npm run clean && npm run build && npm prune --production && npm dedupe && npm shrinkwrap && git add npm-shrinkwrap.json"
+    "version": "npm install && npm run clean && npm run build && npm prune && npm dedupe && npm shrinkwrap && git add npm-shrinkwrap.json",
+    "postversion": "git push --follow-tags"
   },
   "eslintConfig": {
     "extends": "react-app"
