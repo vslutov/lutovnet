@@ -1,3 +1,7 @@
-    import React from 'react'
+    import React, { Fragment } from 'react'
 
-    export default AppComponent = => pug"p.lead Hello, Pug!"
+    export default AppComponent = => `pug\`
+      Fragment
+        p.lead Hello, Pug!
+        a Homepage
+    \``

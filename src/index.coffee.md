@@ -1,12 +1,17 @@
     import React from 'react'
     import ReactDOM from 'react-dom'
     import { App } from './App'
-    import { unregister } from './serviceWorker'
+    import { register } from './serviceWorker'
+
+Add a custom bootstrap theme. That necessary, becouse we would
+use dark theme.
+
+    import './custom-bootstrap.scss'
+
+Render app on root element. This line starts the app.
 
     ReactDOM.render pug'App', document.getElementById 'root'
 
-If you want your app to work offline and load faster, you can change
-unregister() to register() below. Note this comes with some pitfalls.
-Learn more about service workers: https://bit.ly/CRA-PWA
+Register service worker for fast offline work.
 
-    unregister()
+    register()

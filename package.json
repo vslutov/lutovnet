@@ -14,7 +14,7 @@
     "test": "craco test",
     "clean": "rimraf build",
     "cz": "git-cz",
-    "prepublishOnly": "npm install && npm run clean && npm test && npm run build && npm prune --production && npm dedupe && npm shrinkwrap"
+    "version": "npm install && npm run clean && npm test && npm run build && npm prune --production && npm dedupe && npm shrinkwrap && git add npm-shrinkwrap.json"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,12 +28,14 @@
   "devDependencies": {
     "@craco/craco": "^3.6.0",
     "babel-plugin-transform-react-pug": "^7.0.0",
+    "bootstrap": "^4.3.1",
     "coffee-loader": "^0.9.0",
     "coffeescript": "^2.3.2",
     "commitizen": "^3.0.7",
     "cz-conventional-changelog": "^2.1.0",
     "husky": "^2.1.0",
     "jest-preset-coffeescript": "^1.0.1",
+    "node-sass": "^4.11.0",
     "pug-as-jsx-loader": "^1.0.66",
     "rimraf": "^2.6.3"
   },
@@ -43,9 +45,6 @@
     }
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "npm test -- --watchAll=false",
-      "pre-push": "npm test -- --watchAll=false"
-    }
+    "hooks": {}
   }
 }

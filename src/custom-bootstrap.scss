@@ -1,0 +1,52 @@
+// Color system
+
+// Solarized
+$base03 :   #002b36;
+$base02 :   #073642;
+$base01 :   #586e75;
+$base0  :   #839496;
+$base1  :   #93a1a1;
+
+// TODO: Maybe it's a mistake
+$white:    $base1;
+$gray-100: $base1;
+$gray-200: $base1;
+$gray-300: $base0;
+$gray-400: $base0;
+$gray-500: $base01;
+$gray-600: $base01;
+$gray-700: $base02;
+$gray-800: $base02;
+$gray-900: $base03;
+$black:    $base03;
+
+// Custom colors TODO: change values to apropriate
+$indigo:  #6610f2;
+$pink:    #e83e8c;
+$teal:    #199e76;
+
+// Solarized
+$yellow :   #b58900;
+$orange :   #cb4b16;
+$red    :   #dc322f;
+$magenta:   #d33682;
+$blue   :   #268bd2;
+$cyan   :   #2aa198;
+$green  :   #859900;
+$purple :   #6c71c4;
+
+$primary:       $blue;
+$secondary:     $base01;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $base1;
+$dark:          $base02;
+
+// Body
+
+$body-bg: $base03;
+$body-color: $base0;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
