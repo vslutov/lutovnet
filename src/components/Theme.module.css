@@ -1,0 +1,19 @@
+.dark {
+  --background: var(--color-base03);
+  --text: var(--color-base0);
+
+  --highlight-background: var(--color-base02);
+  --highlight-text: var(--color-base1);
+
+  --secondary-text: var(--color-base01);
+}
+
+.light {
+  --background: var(--color-base3);
+  --text: var(--color-base00);
+
+  --highlight-background: var(--color-base2);
+  --highlight-text: var(--color-base01);
+
+  --secondary-text: var(--color-base1);
+}

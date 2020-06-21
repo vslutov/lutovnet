@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cn should add classname on cn 1`] = `
+<a
+  class="MyClass left"
+/>
+`;
+
+exports[`cn should get display name from component 1`] = `
+<div
+  class="MyDiv"
+/>
+`;
+
+exports[`cn should render 1`] = `
+<span
+  class="MyClass"
+/>
+`;
+
+exports[`cn should render 2`] = `
+<span
+  class="MyClass addtional"
+/>
+`;
+
+exports[`cn should render 3`] = `
+<span
+  class="MyClass"
+>
+  hello
+</span>
+`;
+
+exports[`cn should render 4`] = `
+<div
+  class="MyClass"
+/>
+`;
+
+exports[`cn should render 5`] = `
+<a
+  class="MyClass"
+  href="kek"
+/>
+`;
+
+exports[`cn should render as cn 1`] = `
+<a
+  class="MyClass"
+/>
+`;
+
+exports[`cn should render as cn 2`] = `
+<a
+  class="MyClass addtional"
+/>
+`;
+
+exports[`cn should render as cn 3`] = `
+<a
+  class="MyClass"
+  href="kek"
+>
+  hello
+</a>
+`;
+
+exports[`cn should render as cn 4`] = `
+<b
+  class="MyClass"
+/>
+`;
+
+exports[`cn should render as cn 5`] = `
+<div
+  class="MyClass"
+/>
+`;

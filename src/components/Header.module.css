@@ -1,0 +1,48 @@
+.header {
+  padding: 1rem 1.5rem;
+  background-color: var(--highlight-background);
+  color: var(--highlight-text);
+  font-family: var(--font-caption);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.link, .link:visited {
+  color: var(--secondary-text);
+  margin-right: 1rem;
+}
+
+.logo, .logo:visited {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--highlight-text);
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.link.activeLink {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.button {
+  padding: 3px 4px 0 4px;
+}
+
+@media screen and (min-width: 768px) {
+  .inner {
+    flex-direction: row;
+    align-items: baseline;
+  }
+  .button {
+    margin-left: .5rem;
+  }
+  .right {
+    margin-left: auto;
+  }
+}
+

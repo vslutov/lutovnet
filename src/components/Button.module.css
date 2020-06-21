@@ -1,0 +1,17 @@
+.button {
+  background: var(--background);
+  color: var(--highlight-text);
+  border-color: var(--highlight-text);
+  border: 2px solid;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+.button:focus, .button:hover {
+  background: var(--highlight-background);
+}
+
+.secondary {
+  color: var(--secondary-text);
+  border-color: var(--secondary-text);
+}
